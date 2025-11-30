@@ -1,0 +1,25 @@
+site_name: Bloque 2 - Programación
+site_author: Jordi Cidoncha
+
+theme:
+  name: "material"
+  language: es
+  features:
+    - navigation.top # Botó de "Back to top"
+    - content.code.copy
+    - content.code.annotate
+  font:
+    text: Roboto
+    code: JetBrains Mono
+
+  markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.details
+  - pymdownx.tabbed
+  - pymdownx.tasklist
+  - admonition
+  - toc:
+      permalink: true
+
+plugins:
+  - search
