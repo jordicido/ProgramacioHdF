@@ -1,0 +1,622 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Jordi Cidoncha">
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>1. De pseudocódigo a Python: el cambio de “lenguaje” - Bloque 2 - Programación</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-de-pseudocodigo-a-python-el-cambio-de-lenguaje" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Bloque 2 - Programación" class="md-header__button md-logo" aria-label="Bloque 2 - Programación" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bloque 2 - Programación
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1. De pseudocódigo a Python: el cambio de “lenguaje”
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Bloque 2 - Programación" class="md-nav__button md-logo" aria-label="Bloque 2 - Programación" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Bloque 2 - Programación
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRSI - 1º Bachillerato IES Hort de Feliu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Python
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. De pseudocódigo a Python: el cambio de “lenguaje”
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="1-de-pseudocodigo-a-python-el-cambio-de-lenguaje"><strong>1. De pseudocódigo a Python: el cambio de “lenguaje”</strong></h1>
+<p>Antes de escribir código, es importante explicar que Python es un <strong>lenguaje real</strong>, mientras que el pseudocódigo era solo una forma de describir ideas.
+Por eso en Python hay reglas <strong>más estrictas</strong>:</p>
+<ul>
+<li>Python usa <strong>sangrías (indentación)</strong> para saber qué instrucciones están dentro de un bloque.</li>
+<li>Python usa <strong>dos puntos <code>:</code></strong> al iniciar bloques (<code>if</code>, <code>elif</code>, <code>else</code>, <code>while</code>, <code>for</code>, <code>def</code>…).</li>
+<li>El pseudocódigo usaba estructuras como <code>INICIO</code> y <code>FIN</code>, pero en Python <strong>no existen</strong>: el programa empieza desde la primera línea ejecutable.</li>
+<li>Ya no escribiremos:</li>
+</ul>
+<p><code>LEER nombre
+  MOSTRAR nombre</code></p>
+<p>sino que usaremos funciones reales:</p>
+<ul>
+<li><code>input()</code> para pedir datos</li>
+<li><code>print()</code> para mostrar datos</li>
+</ul>
+<hr />
+<h1 id="2-primer-contacto-con-python-print-y-comentarios">🖨️ <strong>2. Primer contacto con Python: <code>print()</code> y comentarios</strong></h1>
+<h2 id="print">👉 <code>print()</code></h2>
+<p>La función <code>print()</code> sirve para <strong>mostrar texto o valores</strong> en la pantalla.
+Es la forma más básica de ver resultados.</p>
+<pre><code class="language-python">print(&quot;Hola, mundo&quot;)
+print(&quot;Estamos aprendiendo Python&quot;)
+print(3 + 7)
+</code></pre>
+<h2 id="comentarios">👉 Comentarios <code>#</code></h2>
+<p>Sirven para añadir notas que el ordenador <strong>no ejecuta</strong>, pero ayudan a entender el programa.</p>
+<pre><code class="language-python"># Esto es un comentario
+print(&quot;Ejemplo de comentario&quot;)
+</code></pre>
+<p><strong>Mensaje clave:</strong></p>
+<blockquote>
+<p>Los comentarios ayudan a organizar y explicar el código.</p>
+</blockquote>
+<hr />
+<h1 id="3-variables-y-tipos-basicos">🔤 <strong>3. Variables y tipos básicos</strong></h1>
+<p>En pseudocódigo se usaban variables sin declararlas.
+En Python <strong>aparecen cuando les asignas un valor</strong>:</p>
+<pre><code class="language-python">edad = 17
+nombre = &quot;Laura&quot;
+precio = 19.95
+</code></pre>
+<h2 id="tipos-basicos-importantes">Tipos básicos importantes:</h2>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Ejemplo</th>
+<th>Explicación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>int</code></td>
+<td><code>10</code></td>
+<td>Enteros</td>
+</tr>
+<tr>
+<td><code>float</code></td>
+<td><code>3.14</code></td>
+<td>Decimales</td>
+</tr>
+<tr>
+<td><code>str</code></td>
+<td><code>"Hola"</code></td>
+<td>Texto</td>
+</tr>
+<tr>
+<td><code>bool</code></td>
+<td><code>True</code> / <code>False</code></td>
+<td>Lógico</td>
+</tr>
+</tbody>
+</table>
+<h2 id="conversion-de-tipos-porque-input-genera-texto">Conversión de tipos (porque input() genera texto)</h2>
+<p>Esto será clave más adelante:</p>
+<pre><code class="language-python">edad = int(input(&quot;Introduce tu edad: &quot;))
+precio = float(input(&quot;Precio: &quot;))
+nombre = input(&quot;Tu nombre: &quot;)   # No necesita conversión
+</code></pre>
+<hr />
+<h1 id="4-input-conversion-de-tipos">⌨️ <strong>4. <code>input()</code> + conversión de tipos</strong></h1>
+<p>En pseudocódigo se usaba:</p>
+<pre><code>LEER edad
+</code></pre>
+<p>En Python:</p>
+<pre><code class="language-python">edad = input(&quot;Introduce tu edad: &quot;)
+</code></pre>
+<p>Pero <strong>si quieres números</strong>, recuerda que <code>input()</code> siempre devuelve una <strong>cadena de texto</strong>, así que necesitas convertirla:</p>
+<pre><code class="language-python">edad = int(input(&quot;Introduce tu edad: &quot;))
+altura = float(input(&quot;Introduce tu altura: &quot;))
+</code></pre>
+<p><strong>Explicación importante para el alumnado:</strong></p>
+<blockquote>
+<p>Si no conviertes los números, Python no te dejará sumarlos o compararlos correctamente.</p>
+</blockquote>
+<hr />
+<h1 id="5-operadores-aritmeticos-comparacion-y-logicos">➕ <strong>5. Operadores: aritméticos, comparación y lógicos</strong></h1>
+<p>Aquí ya han visto la mayoría en pseudocódigo, pero toca formalizarlo.</p>
+<h2 id="operadores-aritmeticos">Operadores aritméticos</h2>
+<ul>
+<li><code>+</code> suma</li>
+<li><code>-</code> resta</li>
+<li><code>*</code> multiplicación</li>
+<li><code>/</code> división decimal</li>
+<li><code>//</code> división entera</li>
+<li><code>%</code> resto</li>
+<li><code>**</code> potencia</li>
+</ul>
+<p>Ejemplos:</p>
+<pre><code class="language-python">print(10 / 3)   # 3.333...
+print(10 // 3)  # 3
+print(10 % 3)   # 1
+print(2 ** 3)   # 8
+</code></pre>
+<h2 id="operadores-de-comparacion">Operadores de comparación</h2>
+<ul>
+<li><code>==</code> igual</li>
+<li><code>!=</code> distinto</li>
+<li><code>&lt;</code></li>
+<li><code>&lt;=</code></li>
+<li><code>&gt;</code></li>
+<li><code>&gt;=</code></li>
+</ul>
+<pre><code class="language-python">edad = 18
+print(edad &gt;= 18)  # True
+</code></pre>
+<h2 id="operadores-logicos">Operadores lógicos</h2>
+<ul>
+<li><code>and</code></li>
+<li><code>or</code></li>
+<li><code>not</code></li>
+</ul>
+<pre><code class="language-python">print(edad &gt;= 18 and edad &lt;= 65)
+print(edad &lt; 0 or edad &gt; 120)
+print(not (edad &lt; 0))
+</code></pre>
+<hr />
+<h1 id="6-condicionales-if-elif-else">🔀 <strong>6. Condicionales: <code>if</code>, <code>elif</code>, <code>else</code></strong></h1>
+<p>Lo más importante del puente pseudocódigo → Python.</p>
+<h2 id="estructura-basica">Estructura básica:</h2>
+<h3 id="pseudocodigo">Pseudocódigo:</h3>
+<pre><code>SI condición ENTONCES
+    ...
+SINO
+    ...
+FIN_SI
+</code></pre>
+<h3 id="python">Python:</h3>
+<pre><code class="language-python">if condición:
+    ...
+else:
+    ...
+</code></pre>
+<h3 id="ejemplo">Ejemplo:</h3>
+<pre><code class="language-python">edad = int(input(&quot;Edad: &quot;))
+
+if edad &gt;= 18:
+    print(&quot;Eres mayor de edad&quot;)
+else:
+    print(&quot;Eres menor de edad&quot;)
+</code></pre>
+<hr />
+<h1 id="61-multiples-condiciones-elif">🔽 <strong>6.1. Múltiples condiciones: <code>elif</code></strong></h1>
+<p>Explicas que <code>elif</code> = “sino si”, y que evita anidar muchos <code>if</code>:</p>
+<pre><code class="language-python">nota = float(input(&quot;Nota: &quot;))
+
+if nota &lt; 5:
+    print(&quot;Suspenso&quot;)
+elif nota &lt; 7:
+    print(&quot;Aprobado&quot;)
+elif nota &lt; 9:
+    print(&quot;Notable&quot;)
+else:
+    print(&quot;Sobresaliente&quot;)
+</code></pre>
+<p>Explicación clave:</p>
+<blockquote>
+<p>Python evalúa de arriba a abajo y ejecuta solo el primer bloque que se cumpla.</p>
+</blockquote>
+<hr />
+<h1 id="7-mini-ejercicios-puente-pseudocodigo-python">🧪 <strong>7. Mini ejercicios puente pseudocódigo → Python</strong></h1>
+<p>Aquí los alumnos conectan todo:</p>
+<h3 id="ejercicio-1-par-o-impar">Ejercicio 1: Par o impar</h3>
+<pre><code class="language-python">n = int(input(&quot;Número: &quot;))
+
+if n % 2 == 0:
+    print(&quot;Par&quot;)
+else:
+    print(&quot;Impar&quot;)
+</code></pre>
+<h3 id="ejercicio-2-clasificacion-por-edad">Ejercicio 2: Clasificación por edad</h3>
+<pre><code class="language-python">edad = int(input(&quot;Edad: &quot;))
+
+if edad &lt; 13:
+    print(&quot;Niño&quot;)
+elif edad &lt; 18:
+    print(&quot;Adolescente&quot;)
+else:
+    print(&quot;Adulto&quot;)
+</code></pre>
+<h3 id="ejercicio-3-contrasena">Ejercicio 3: Contraseña</h3>
+<pre><code class="language-python">pw = input(&quot;Contraseña: &quot;)
+
+if pw == &quot;python123&quot;:
+    print(&quot;Acceso permitido&quot;)
+else:
+    print(&quot;Acceso denegado&quot;)
+</code></pre>
+<p><strong>Objetivo de estos ejercicios:</strong>
+Consolidar input, conversión, if/elif/else y operadores.</p>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.top", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
