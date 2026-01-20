@@ -805,13 +805,80 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ejercicios-de-practica" class="md-nav__link">
+  <a href="#7-bucles-repeticiones-while-y-for" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ejercicios de práctica:
+        7. Bucles (repeticiones): while y for
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="7. Bucles (repeticiones): while y for">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-bucle-while-mientras" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1. Bucle while (mientras)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1. Bucle while (mientras)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pseudocodigo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pseudocódigo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-basico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo básico:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-ejemplos-practicos-con-while" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2. Ejemplos prácticos con while
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1206,13 +1273,80 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ejercicios-de-practica" class="md-nav__link">
+  <a href="#7-bucles-repeticiones-while-y-for" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ejercicios de práctica:
+        7. Bucles (repeticiones): while y for
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="7. Bucles (repeticiones): while y for">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-bucle-while-mientras" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1. Bucle while (mientras)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1. Bucle while (mientras)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pseudocodigo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pseudocódigo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-basico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo básico:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-ejemplos-practicos-con-while" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2. Ejemplos prácticos con while
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1443,12 +1577,66 @@ else:
     print(&quot;No eres adulto&quot;)
 </code></pre>
 <p>Es importante entender cómo funcionan los operadores lógicos para crear condiciones más complejas. </p>
-<h2 id="ejercicios-de-practica">Ejercicios de práctica:</h2>
-<ol>
-<li>Pide un nombre de usuario y si no es "admin", muestra "Acceso denegado". En caso contrario, muestra "Acceso concedido".</li>
-<li>Pide al usuario un número y muestra si es positivo, negativo o cero.</li>
-<li>Pide el estado de un semáforo (rojo, amarillo, verde) y muestra la acción correspondiente (detenerse, acelerar, arrancar).</li>
-</ol>
+<hr />
+<h2 id="7-bucles-repeticiones-while-y-for"><strong>7. Bucles (repeticiones): while y for</strong></h2>
+<p>En pseudocódigo ya se trabajaba la <strong>repetición de instrucciones</strong> mediante estructuras como <em>MIENTRAS</em>, <em>PARA</em> o <em>HASTA QUE</em>.
+En Python estas estructuras existen, pero con su propia sintaxis y reglas.</p>
+<p>La idea clave de un bucle es:</p>
+<blockquote>
+<p><strong>Repetir un bloque de instrucciones mientras se cumpla una condición o un número determinado de veces.</strong></p>
+</blockquote>
+<hr />
+<h3 id="71-bucle-while-mientras"><strong>7.1. Bucle <code>while</code> (mientras)</strong></h3>
+<p>El bucle <code>while</code> repite un bloque de código <strong>mientras una condición sea verdadera</strong>.</p>
+<h4 id="pseudocodigo_1">Pseudocódigo:</h4>
+<pre><code>MIENTRAS condición HACER
+    instrucciones
+FIN_MIENTRAS
+</code></pre>
+<h4 id="python_1">Python:</h4>
+<pre><code class="language-python">while condición:
+    instrucciones
+</code></pre>
+<p>⚠️ <strong>Importante</strong>:</p>
+<ul>
+<li>La condición se evalúa <strong>antes</strong> de cada repetición.</li>
+<li>Si la condición nunca deja de cumplirse, el programa entra en un <strong>bucle infinito</strong>.</li>
+</ul>
+<h4 id="ejemplo-basico">Ejemplo básico:</h4>
+<pre><code class="language-python">contador = 1
+
+while contador &lt;= 5:
+    print(contador)
+    contador = contador + 1
+</code></pre>
+<p>Salida:</p>
+<pre><code>1
+2
+3
+4
+5
+</code></pre>
+<p>Observa que <strong>es obligatorio modificar la variable</strong> que controla la condición.</p>
+<hr />
+<h3 id="72-ejemplos-practicos-con-while">7.2. Ejemplos prácticos con <code>while</code></h3>
+<p><strong>Ejemplo 1: pedir un número hasta que sea positivo</strong></p>
+<pre><code class="language-python">numero = int(input(&quot;Introduce un número positivo: &quot;))
+
+while numero &lt;= 0:
+    numero = int(input(&quot;Error. Introduce un número positivo: &quot;))
+
+print(&quot;Número correcto:&quot;, numero)
+</code></pre>
+<p><strong>Ejemplo 2: contador regresivo</strong></p>
+<pre><code class="language-python">cuenta = 10
+
+while cuenta &gt; 0:
+    print(cuenta)
+    cuenta = cuenta - 1
+
+print(&quot;¡Despegue!&quot;)
+</code></pre>
+<hr />
 
 
 
