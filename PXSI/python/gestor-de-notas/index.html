@@ -898,15 +898,38 @@
 1. Pedir al usuario que introduzca el nombre del alumno.
 2. Pedir al usuario que introduzca las notas del alumno, de una en una, como números decimales. El usuario deberá introducir un número negativo para indicar que ha terminado de introducir las notas.
 3. Calcular la media de las notas introducidas.
-4. Determinar la nota cualitativa correspondiente a la media, según la siguiente tabla:
-| Media | Nota cualitativa |
-|------|------------------|
-| 9.0 - 10.0 | Sobresaliente |
-| 7.0 - 8.9 | Notable |
-| 6.0 - 6.9 | Bien |
-| 5.0 - 5.9 | Suficiente |
-| 0.0 - 4.9 | Insuficiente |
+4. Determinar la nota cualitativa correspondiente a la media, según la tabla de abajo.
 5. Mostrar la media y la nota cualitativa al usuario.</p>
+<table>
+<thead>
+<tr>
+<th>Media</th>
+<th>Nota cualitativa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9.0 - 10.0</td>
+<td>Sobresaliente</td>
+</tr>
+<tr>
+<td>7.0 - 8.9</td>
+<td>Notable</td>
+</tr>
+<tr>
+<td>6.0 - 6.9</td>
+<td>Bien</td>
+</tr>
+<tr>
+<td>5.0 - 5.9</td>
+<td>Suficiente</td>
+</tr>
+<tr>
+<td>0.0 - 4.9</td>
+<td>Insuficiente</td>
+</tr>
+</tbody>
+</table>
 <h1 id="sesion-4-implementar-la-opcion-de-generar-nota-aleatoria">Sesión 4: Implementar la opción de generar nota aleatoria</h1>
 <p>En esta sesión, vamos a implementar la opción de generar notas aleatoria. Como los alumnos estan usando la IA para todo, hemos pensado que tampoco importará si el profesor genera notas aleatorias a los trabajos de los alumnos. Para ello, pediremos al usuario que introduzca el nombre del alumno y el número de notas que desea generar. Luego, generaremos las notas aleatorias, calcularemos la media y la nota cualitativa correspondiente, y las mostraremos al usuario.</p>
 <p>Para calcular la nota aleatoria, podemos usar la función <code>random.uniform(a, b)</code> del módulo <code>random</code>, que devuelve un número decimal aleatorio entre <code>a</code> y <code>b</code>. En este caso, podemos usar <code>a = 0.0</code> y <code>b = 10.0</code> para generar notas entre 0 y 10. Para usar el módulo <code>random</code>, primero debemos importarlo al principio de nuestro programa con la línea <code>import random</code>.</p>
