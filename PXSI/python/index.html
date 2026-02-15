@@ -1109,6 +1109,34 @@
   
   
     <li class="md-nav__item">
+      <a href="ejercicios-listas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ejercicios básicos de Listas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ejercicios-while/" class="md-nav__link">
         
   
@@ -2086,6 +2114,118 @@ print(&quot;Cantidad de números pares:&quot;, contador)
 ❌ Pensar que el <code>range()</code> incluye el último número
 ❌ Modificar manualmente la variable del bucle
 ❌ Usar <code>for</code> cuando debería usarse <code>while</code></p>
+<p>Perfecto 👌
+Te añado ahora el <strong>apartado 8 – Listas en Python</strong>, manteniendo exactamente el mismo estilo, nivel y progresión didáctica que llevas en los apuntes.</p>
+<p>Puedes copiarlo tal cual a continuación del apartado 7.</p>
+<hr />
+<h1 id="8-listas-en-python"><strong>8. Listas en Python</strong></h1>
+<p>Hasta ahora hemos trabajado con variables que almacenan <strong>un solo valor</strong>.
+Pero muchas veces necesitamos guardar <strong>varios valores juntos</strong>.</p>
+<p>Para eso usamos las <strong>listas</strong>.</p>
+<hr />
+<h2 id="81-que-es-una-lista"><strong>8.1. ¿Qué es una lista?</strong></h2>
+<p>Una <strong>lista</strong> es una estructura de datos que permite almacenar <strong>varios elementos en una sola variable</strong>.</p>
+<p>Se escribe usando <strong>corchetes <code>[]</code></strong> y separando los elementos con comas.</p>
+<pre><code class="language-python">numeros = [1, 2, 3, 4, 5]
+nombres = [&quot;Ana&quot;, &quot;Luis&quot;, &quot;Marta&quot;]
+</code></pre>
+<p>Una lista puede contener:</p>
+<ul>
+<li>Números</li>
+<li>Textos</li>
+<li>Valores lógicos</li>
+<li>Incluso mezclarlos (aunque no es lo más habitual)</li>
+</ul>
+<pre><code class="language-python">mezcla = [10, &quot;Hola&quot;, True]
+</code></pre>
+<hr />
+<h2 id="82-acceder-a-los-elementos-indices"><strong>8.2. Acceder a los elementos (índices)</strong></h2>
+<p>Cada elemento de la lista tiene una <strong>posición</strong>, llamada <strong>índice</strong>.</p>
+<p>⚠️ Muy importante:</p>
+<blockquote>
+<p>En Python, los índices empiezan en 0.</p>
+</blockquote>
+<p>Ejemplo:</p>
+<pre><code class="language-python">nombres = [&quot;Ana&quot;, &quot;Luis&quot;, &quot;Marta&quot;]
+
+print(nombres[0])  # Ana
+print(nombres[1])  # Luis
+print(nombres[2])  # Marta
+</code></pre>
+<hr />
+<h2 id="83-modificar-un-elemento"><strong>8.3. Modificar un elemento</strong></h2>
+<p>Podemos cambiar un elemento accediendo a su posición:</p>
+<pre><code class="language-python">nombres = [&quot;Ana&quot;, &quot;Luis&quot;, &quot;Marta&quot;]
+nombres[1] = &quot;Carlos&quot;
+
+print(nombres)
+</code></pre>
+<p>Salida:</p>
+<pre><code>['Ana', 'Carlos', 'Marta']
+</code></pre>
+<hr />
+<h2 id="84-anadir-elementos"><strong>8.4. Añadir elementos</strong></h2>
+<p>Para añadir un elemento al final de la lista usamos el método <code>.append()</code>:</p>
+<pre><code class="language-python">numeros = [1, 2, 3]
+numeros.append(4)
+
+print(numeros)
+</code></pre>
+<p>Salida:</p>
+<pre><code>[1, 2, 3, 4]
+</code></pre>
+<hr />
+<h2 id="85-el-tamano-de-una-lista"><strong>8.5. El tamaño de una lista</strong></h2>
+<p>Para saber cuántos elementos tiene una lista usamos <code>len()</code>:</p>
+<pre><code class="language-python">numeros = [10, 20, 30]
+print(len(numeros))
+</code></pre>
+<p>Salida:</p>
+<pre><code>3
+</code></pre>
+<hr />
+<h2 id="86-recorrer-una-lista-con-for"><strong>8.6. Recorrer una lista con <code>for</code></strong></h2>
+<p>Una de las cosas más habituales es recorrer una lista con un bucle <code>for</code>.</p>
+<pre><code class="language-python">nombres = [&quot;Ana&quot;, &quot;Luis&quot;, &quot;Marta&quot;]
+
+for nombre in nombres:
+    print(nombre)
+</code></pre>
+<p>Aquí, <code>nombre</code> toma el valor de cada elemento en cada repetición.</p>
+<hr />
+<h2 id="87-recorrer-una-lista-usando-indices"><strong>8.7. Recorrer una lista usando índices</strong></h2>
+<p>También podemos recorrerla usando <code>range()</code> y posiciones:</p>
+<pre><code class="language-python">nombres = [&quot;Ana&quot;, &quot;Luis&quot;, &quot;Marta&quot;]
+
+for i in range(len(nombres)):
+    print(nombres[i])
+</code></pre>
+<hr />
+<h2 id="88-buscar-un-elemento"><strong>8.8. Buscar un elemento</strong></h2>
+<p>Podemos comprobar si un elemento está dentro de una lista usando <code>in</code>:</p>
+<pre><code class="language-python">nombres = [&quot;Ana&quot;, &quot;Luis&quot;, &quot;Marta&quot;]
+
+if &quot;Ana&quot; in nombres:
+    print(&quot;Está en la lista&quot;)
+</code></pre>
+<hr />
+<h2 id="89-listas-acumuladores"><strong>8.9. Listas + acumuladores</strong></h2>
+<p>Las listas se combinan muy bien con bucles y acumuladores.</p>
+<p>Ejemplo: sumar todos los números de una lista.</p>
+<pre><code class="language-python">numeros = [10, 20, 30, 40]
+suma = 0
+
+for numero in numeros:
+    suma += numero
+
+print(&quot;La suma es:&quot;, suma)
+</code></pre>
+<hr />
+<h2 id="810-errores-comunes-con-listas"><strong>8.10. Errores comunes con listas</strong></h2>
+<p>❌ Olvidar que empiezan en índice 0
+❌ Acceder a una posición que no existe
+❌ Confundir <code>.append()</code> con <code>=</code>
+❌ Modificar la lista mientras se recorre sin entender lo que ocurre</p>
 
 
 
