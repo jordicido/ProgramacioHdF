@@ -1,0 +1,1455 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Jordi Cidoncha">
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../edicion-imagen/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Conceptos básicos de imagen digital - Bloque 2 - Programación</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#conceptos-basicos-de-imagen-digital" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Bloque 2 - Programación" class="md-header__button md-logo" aria-label="Bloque 2 - Programación" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bloque 2 - Programación
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Conceptos básicos de imagen digital
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Bloque 2 - Programación" class="md-nav__button md-logo" aria-label="Bloque 2 - Programación" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Bloque 2 - Programación
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Materiales IES Hort de Feliu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PDID
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PDID
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Materiales PDID
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conceptos básicos de imagen digital
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conceptos básicos de imagen digital
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-imagen-raster-y-vectorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Imagen raster y vectorial
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Imagen raster y vectorial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-que-es-una-imagen-raster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. ¿Qué es una imagen raster?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-que-es-una-imagen-vectorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. ¿Qué es una imagen vectorial?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-pixeles-y-resolucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Píxeles y resolución
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Píxeles y resolución">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-que-es-un-pixel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. ¿Qué es un píxel?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-que-es-la-resolucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. ¿Qué es la resolución?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-tamano-de-archivo-vs-tamano-en-pixeles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Tamaño de archivo vs tamaño en píxeles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ppi-dpi-densidad-de-pixeles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. PPI / DPI (densidad de píxeles)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-formatos-de-imagen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Formatos de imagen
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Formatos de imagen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-jpg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. JPG
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-png" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. PNG
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-gif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3. GIF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-svg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4. SVG
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-webp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5. WebP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-por-que-necesitas-comprender-todo-esto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. ¿Por qué necesitas comprender todo esto?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../edicion-imagen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Edición de imagen con GIMP: conceptos esenciales
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PXSI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PXSI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PXSI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRSI - 1º Bachillerato IES Hort de Feliu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PXSI/pseudo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programación en Pseudocódigo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Python
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PXSI/python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programación en Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PXSI/python/ejercicios-avanzados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ejercicio: Cálculo de cambio en billetes y monedas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PXSI/python/ejercicios-basicos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ejercicios básicos de programación en Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PXSI/python/ejercicios-for/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ejercicios básicos de for
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PXSI/python/ejercicios-listas-intermedios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ejercicios de Listas — Nivel intermedio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PXSI/python/ejercicios-listas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ejercicios básicos de Listas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PXSI/python/ejercicios-while/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problemas básicos con while en Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PXSI/python/gestor-de-notas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestor de notas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PXSI/python/hackathon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1a Hackathon IES Hort de Feliu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PXSI/python/hackathon2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2a Hackathon IES Hort de Feliu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PXSI/python/hackathon3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3a Hackathon IES Hort de Feliu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-imagen-raster-y-vectorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Imagen raster y vectorial
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Imagen raster y vectorial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-que-es-una-imagen-raster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. ¿Qué es una imagen raster?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-que-es-una-imagen-vectorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. ¿Qué es una imagen vectorial?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-pixeles-y-resolucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Píxeles y resolución
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Píxeles y resolución">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-que-es-un-pixel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. ¿Qué es un píxel?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-que-es-la-resolucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. ¿Qué es la resolución?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-tamano-de-archivo-vs-tamano-en-pixeles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Tamaño de archivo vs tamaño en píxeles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ppi-dpi-densidad-de-pixeles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. PPI / DPI (densidad de píxeles)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-formatos-de-imagen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Formatos de imagen
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Formatos de imagen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-jpg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. JPG
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-png" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. PNG
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-gif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3. GIF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-svg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4. SVG
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-webp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5. WebP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-por-que-necesitas-comprender-todo-esto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. ¿Por qué necesitas comprender todo esto?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="conceptos-basicos-de-imagen-digital">Conceptos básicos de imagen digital</h1>
+<p>En esta página aprenderás cómo están hechas las imágenes digitales y los conceptos esenciales para trabajar con ellas. Dominar estas ideas te ayudará después a editar, retocar y componer imágenes de manera más eficaz.</p>
+<hr />
+<h2 id="1-imagen-raster-y-vectorial">1. Imagen raster y vectorial</h2>
+<h3 id="11-que-es-una-imagen-raster">1.1. ¿Qué es una imagen raster?</h3>
+<p>Una imagen <strong>raster</strong> (también llamada <em>mapa de bits</em>) está formada por miles o millones de <strong>píxeles</strong>.<br />
+Es el tipo de imagen más habitual: fotografías, capturas de pantalla, imágenes de redes sociales…</p>
+<ul>
+<li>Cada píxel tiene un color.</li>
+<li>Si ampliamos mucho la imagen, veremos “cuadraditos”.</li>
+<li>Al hacer demasiado zoom, la imagen <strong>pierde calidad</strong> (se pixela).</li>
+</ul>
+<p>Ejemplos:
+- Fotos tomadas con el móvil.
+- Imágenes de Instagram o TikTok.
+- Fondos de pantalla.</p>
+<hr />
+<h3 id="12-que-es-una-imagen-vectorial">1.2. ¿Qué es una imagen vectorial?</h3>
+<p>Una imagen <strong>vectorial</strong> no usa píxeles, sino <strong>líneas, formas y operaciones matemáticas</strong>.<br />
+Da igual cuánto la amplíes: <strong>siempre se verá nítida</strong>.</p>
+<p>Se usa principalmente para logos, iconos e ilustraciones.</p>
+<ul>
+<li>No pierde calidad al ampliar.</li>
+<li>Se puede escalar todo lo que quieras.</li>
+<li>Es ideal para diseño gráfico y cartelería.</li>
+</ul>
+<p>Ejemplos:
+- Iconos de aplicaciones.
+- Logotipos de marcas.
+- Ilustraciones digitales.</p>
+<hr />
+<h2 id="2-pixeles-y-resolucion">2. Píxeles y resolución</h2>
+<h3 id="21-que-es-un-pixel">2.1. ¿Qué es un píxel?</h3>
+<p>Un <strong>píxel</strong> es la unidad mínima de una imagen digital.<br />
+Es como una baldosa en un mosaico: una pieza pequeña que, junto a muchas otras, forma una imagen completa.</p>
+<p>Cuando haces zoom en una imagen y ves “bloques de color”, eso son píxeles.</p>
+<hr />
+<h3 id="22-que-es-la-resolucion">2.2. ¿Qué es la resolución?</h3>
+<p>La <strong>resolución</strong> de una imagen indica cuántos píxeles tiene en ancho y alto.</p>
+<p>Ejemplos:
+- 1920 × 1080 → Full HD<br />
+- 1080 × 1080 → formato cuadrado<br />
+- 3840 × 2160 → 4K</p>
+<p>Más píxeles = mejor calidad (hasta cierto punto).</p>
+<hr />
+<h3 id="23-tamano-de-archivo-vs-tamano-en-pixeles">2.3. Tamaño de archivo vs tamaño en píxeles</h3>
+<p><strong>No es lo mismo:</strong></p>
+<ul>
+<li><strong>Tamaño de imagen (en píxeles):</strong> ejemplo: 1200 × 800  </li>
+<li><strong>Tamaño de archivo (en MB o KB):</strong> ejemplo: 2,1 MB  </li>
+</ul>
+<p>Una imagen puede tener:
+- muchas dimensiones pero pesar poco, o<br />
+- pocas dimensiones pero pesar mucho.  </p>
+<p>Depende del <strong>formato</strong> y la <strong>compresión</strong>.</p>
+<hr />
+<h2 id="3-ppi-dpi-densidad-de-pixeles">3. PPI / DPI (densidad de píxeles)</h2>
+<ul>
+<li><strong>PPI:</strong> píxeles por pulgada → pantallas  </li>
+<li><strong>DPI:</strong> puntos por pulgada → impresoras  </li>
+</ul>
+<p>Para pantallas, 72–96 PPI suelen ser suficientes.<br />
+Para impresión de buena calidad, se suele usar <strong>300 PPI</strong>.</p>
+<hr />
+<h2 id="4-formatos-de-imagen">4. Formatos de imagen</h2>
+<h3 id="41-jpg">4.1. JPG</h3>
+<ul>
+<li>Perfecto para fotos.</li>
+<li>Ocupa poco espacio gracias a la <strong>compresión con pérdida</strong>.</li>
+<li>No permite transparencia.</li>
+</ul>
+<h3 id="42-png">4.2. PNG</h3>
+<ul>
+<li>Permite <strong>transparencia</strong>.</li>
+<li>Ideal para logotipos y elementos decorativos.</li>
+<li>Suele pesar más que un JPG.</li>
+</ul>
+<h3 id="43-gif">4.3. GIF</h3>
+<ul>
+<li>Permite animación simple.</li>
+<li>Pocos colores, calidad limitada.</li>
+</ul>
+<h3 id="44-svg">4.4. SVG</h3>
+<ul>
+<li>Formato vectorial.</li>
+<li>Nunca se pixela.</li>
+<li>Perfecto para iconos y logotipos.</li>
+</ul>
+<h3 id="45-webp">4.5. WebP</h3>
+<ul>
+<li>Formato moderno optimizado para la web.</li>
+<li>Buena calidad con poco peso.</li>
+</ul>
+<hr />
+<h2 id="5-por-que-necesitas-comprender-todo-esto">5. ¿Por qué necesitas comprender todo esto?</h2>
+<p>Porque cuando edites imágenes:</p>
+<ul>
+<li>elegirás mejor los recursos,</li>
+<li>evitarás usar imágenes pixeladas,</li>
+<li>sabrás cuándo usar PNG o JPG,</li>
+<li>podrás crear composiciones con buena calidad visual.</li>
+<li>entenderás las limitaciones y ventajas de cada formato.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

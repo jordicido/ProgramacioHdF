@@ -1,9 +1,8 @@
-# PRSI - 1º Bachillerato IES Hort de Feliu
+# Materiales IES Hort de Feliu
 
-## Bloque 2 - Programación
+En este repositorio encontrarás los materiales docentes del IES Hort de Feliu, organizados por asignaturas y cursos.
 
-En esta web encontrarás los recursos y materiales relacionados con el Bloque 2 de la asignatura de Programación para 1º de Bachillerato en el IES Hort de Feliu.
 
-### Pseudocódigo
+## [PDID](PDID/index.md)
 
-### [Python](./python/index.md)
+## [PXSI](PXSI/index.md)
